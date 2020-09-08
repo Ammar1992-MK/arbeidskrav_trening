@@ -23,16 +23,22 @@ public class numberToRoman {
 
     @Test
 
-    void shouldReturn(){
-        assertEquals("XCCV", toRoman(125));
+    void shouldReturnCXXV(){
+        assertEquals("CXXV", toRoman(125));
+    }
+    @Test
+    void shouldReturnMDCCCXCIX(){
+
+        assertEquals("MDCCCXCIX", toRoman(1999));
     }
 
     private String toRoman(int number) {
-
+        String[] hundreds = {"","C","CC","CCC","CD"};
         String[] tens = {"", "X", "XX", "XXX"};
-        String[] units = {"","I","II","III"};
+        String[] units = {"","I","II","III","IV","V"};
 
-        return  tens[(number % 100) / 10] +
+        return  hundreds[(number % 1000) / 100] +
+                tens[(number % 100) / 10] +
                 units[number % 10] ;
     }
 }
