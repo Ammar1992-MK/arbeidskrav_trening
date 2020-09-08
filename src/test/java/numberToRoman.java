@@ -14,9 +14,18 @@ public class numberToRoman {
     void shouldReturnIII(){
         assertEquals("III", toRoman(3));
     }
+
+    @Test
+
+    void shouldReturnXX(){
+        assertEquals("XX", toRoman(20));
+    }
+
     private String toRoman(int number) {
 
-        return "II";
+        String[] units = {"","I","II","III"};
+
+        return units[number % 10] ;
     }
 }
 
