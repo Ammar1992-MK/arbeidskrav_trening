@@ -10,8 +10,14 @@ public class numberToRoman {
        assertEquals("II", toRoman(2));
     }
 
+    @Test
+    void shouldReturnIII(){
+        assertEquals("III", toRoman(3));
+    }
     private String toRoman(int number) {
 
-        return null;
+        return "II";
     }
 }
+
+
